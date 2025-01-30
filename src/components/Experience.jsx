@@ -5,7 +5,7 @@ import java from "../../public/java.png";
 import javascript from "../../public/javascript.png";
 import oracle from "../../public/oracle.png";
 import spring from "../../public/spring.png";
-import springBoot from "../../public/sprinBoot.jpg";
+import springBoot from "../../public/springBoot.jpg";
 
 function Experience() {
     const cardItem=[
