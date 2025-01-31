@@ -78,7 +78,10 @@
 
 
 
-import React from 'react';
+
+
+
+import React from "react";
 import hospital from "../../public/Hospital.png";
 import weather from "../../public/Weather.jpg";
 import amazon from "../../public/Amazon.jpg";
@@ -91,68 +94,86 @@ function Portfolio() {
             logo: hospital,
             name: "Hospital Management System",
             description: "Designed and implemented a system to manage patient records and hospital operations using Java, MySQL, and JDBC. Optimized data retrieval and ensured seamless integration of database operations.",
-            videoLink: "#", // Add your video link here
-            sourceCodeLink: "#" // Add your source code link here
+            videoLink: "",
+            sourceCodeLink: "",
         },
         {
             id: 2,
             logo: weather,
             name: "Weather Application",
             description: "Built a responsive web application using HTML, CSS, and JavaScript to display real-time weather data by integrating with a weather API. The app provides accurate weather updates and a user-friendly interface.",
-            videoLink: "#", // Add your video link here
-            sourceCodeLink: "#" // Add your source code link here
+            videoLink: "",
+            sourceCodeLink: "",
         },
         {
             id: 3,
             logo: amazon,
             name: "Amazon Clone",
             description: "Created a mock Amazon homepage using HTML and CSS to practice front-end development skills. The project focuses on replicating the layout, design, and responsiveness of Amazon's homepage.",
-            videoLink: "#", // Add your video link here
-            sourceCodeLink: "#" // Add your source code link here
+            videoLink: "",
+            sourceCodeLink: "",
         },
         {
             id: 4,
             logo: snake,
             name: "Snake Game",
             description: "Developed a Java-based Snake Ladder game using Swing/AWT for the user interface. Managed game logic and state to create an interactive and fun gaming experience.",
-            videoLink: "#", // Add your video link here
-            sourceCodeLink: "#" // Add your source code link here
-        }
+            videoLink: "",
+            sourceCodeLink: "",
+        },
     ];
+
+    const handleButtonClick = (event, link) => {
+        if (!link) {
+            event.preventDefault();
+            alert("Link not available yet!");
+        }
+    };
 
     return (
         <div name="Portfolio" className="max-w-screen-2xl container mx-auto px-4 md:px-20 mt-10">
             <div>
-                <h1 className="text-3xl font-bold mb-5">Portfolio</h1>
-                <span className="underline font-semibold">Featured Projects</span>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5">
+                <h1 className="text-3xl font-bold mb-8 ">Portfolio</h1>
+                <span className="underline font-semibold text-lg block mb-6">
+                    Featured Projects
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {cardItem.map(({ id, logo, name, description, videoLink, sourceCodeLink }) => (
                         <div
                             key={id}
-                            className="border-[2px] rounded-lg p-4 cursor-pointer hover:scale-105 duration-300 bg-white shadow-lg"
+                            className="border-[2px] rounded-lg p-6 bg-white shadow-md flex flex-col items-center hover:scale-105 transform transition-all duration-300"
+                            style={{ minHeight: '400px' }} // Consistent height for all cards
                         >
-                            {/* Project Logo */}
                             <img
                                 src={logo}
-                                className="w-24 h-24 mx-auto rounded-full border-[2px]"
+                                className="w-20 h-20 rounded-full border-[2px] mb-4 object-cover"
                                 alt={name}
+                                style={{ objectFit: 'contain', width: '80px', height: '80px' }}
                             />
-
-                            {/* Project Name */}
-                            <h2 className="text-xl font-bold text-center mt-4 mb-2">{name}</h2>
-
-                            {/* Project Description */}
-                            <p className="text-gray-700 text-sm text-center mb-4">{description}</p>
-
-                            {/* Buttons for Video and Source Code */}
-                            <div className="flex justify-center space-x-4">
-                                <a href={videoLink} target="_blank" rel="noopener noreferrer">
-                                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded">
+                            <h2 className="text-xl font-bold text-center mb-2">{name}</h2>
+                            <p className="text-gray-700 text-sm text-center mb-6 flex-grow">
+                                {description}
+                            </p>
+                            <div className="flex justify-center space-x-4 w-full mt-auto"> {/* Push buttons to bottom */}
+                                <a
+                                    href={videoLink || "#"}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => handleButtonClick(e, videoLink)}
+                                    className="w-1/2"
+                                >
+                                    <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 w-full rounded">
                                         Video
                                     </button>
                                 </a>
-                                <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
-                                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
+                                <a
+                                    href={sourceCodeLink || "#"}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => handleButtonClick(e, sourceCodeLink)}
+                                    className="w-1/2"
+                                >
+                                    <button className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 w-full rounded">
                                         Source Code
                                     </button>
                                 </a>

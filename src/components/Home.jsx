@@ -89,7 +89,8 @@
 //   )
 // }
 
-// export default Home;
+
+
 import React from 'react';
 import pic from "../../public/Profile.png";
 import { FaFacebookSquare, FaLinkedin, FaTelegram } from "react-icons/fa";
@@ -161,10 +162,10 @@ function Home() {
                 <div className="flex space-x-5">
                   {/* <SiMongodb className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]" /> */}
                   {/* <SiExpress className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]" /> */}
-                  <FaReact className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]" />
-                  <FaNodeJs className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]" />
-                  <SiSpring className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]" />
-                  <SiSpringboot className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]" />
+                  <FaReact className="text-xl md:text-3xl cursor-pointer hover:text-blue-500 duration-200 rounded-full border-[2px]" />
+                  <FaNodeJs className="text-xl md:text-3xl cursor-pointer hover:text-green-600 duration-200 rounded-full border-[2px]" />
+                  <SiSpring className="text-xl md:text-3xl cursor-pointer hover:text-green-500 duration-200 rounded-full border-[2px]" />
+                  <SiSpringboot className="text-xl md:text-3xl cursor-pointer hover:text-green-700 duration-200 rounded-full border-[2px]" />
                 </div>
               </div>
             </div>
